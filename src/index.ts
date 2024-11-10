@@ -47,7 +47,7 @@ const createDailyPage = async () => {
             }
           ]
         },
-        Date: {
+        最終更新日時: {
           type: 'date',
           date: {
             start: YYYYMMDD
