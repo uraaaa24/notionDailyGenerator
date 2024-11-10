@@ -1,0 +1,20 @@
+name: Notion Daily Generator
+on:
+  schedule:
+    - cron: '5 15 * * *' # 毎日0時5分（JST）に実行
+  workflow_dispatch:
+jobs:
+  notion-daily-generator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run deploy
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
