@@ -1,6 +1,6 @@
 import { Client } from '@notionhq/client'
 import dayjs from 'dayjs'
-import en from 'dayjs/locale/ja'
+import en from 'dayjs/locale/en'
 import timezone from 'dayjs/plugin/timezone'
 import utc from 'dayjs/plugin/utc'
 
