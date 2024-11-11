@@ -28,7 +28,9 @@ const dailyPageExists = async () => {
 }
 
 const createDailyPage = async () => {
-  if (dailyPageExists()) {
+  const isExists = await dailyPageExists()
+
+  if (isExists) {
     console.log('Already exist')
     return
   }
