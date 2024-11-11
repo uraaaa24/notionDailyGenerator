@@ -24,6 +24,8 @@ const dailyPageExists = async () => {
       }
     }
   })
+
+  console.dir(res, { depth: null })
   return res.results.length > 0
 }
 
