@@ -20,7 +20,7 @@ const dailyPageExists = async () => {
     filter: {
       property: 'date',
       title: {
-        equals: YYYYMMDD
+        equals: YYYYMMDDdd
       }
     }
   })
