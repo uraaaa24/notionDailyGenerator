@@ -18,7 +18,7 @@ const dailyPageExists = async () => {
   const res = await notion.databases.query({
     database_id: DATABASE_ID,
     filter: {
-      property: '日付',
+      property: 'date',
       title: {
         equals: YYYYMMDD
       }
@@ -39,7 +39,7 @@ const createDailyPage = async () => {
         database_id: DATABASE_ID
       },
       properties: {
-        日付: {
+        date: {
           title: [
             {
               text: {
@@ -48,7 +48,13 @@ const createDailyPage = async () => {
             }
           ]
         },
-        最終更新日時: {
+        created_at: {
+          type: 'date',
+          date: {
+            start: YYYYMMDD
+          }
+        },
+        last_edited_at: {
           type: 'date',
           date: {
             start: YYYYMMDD
